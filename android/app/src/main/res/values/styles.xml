@@ -2,8 +2,14 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <!-- Disable Android 10+ Force Dark -->
+        <item name="android:forceDarkAllowed">false</item>
+
+        <!-- Existing customization -->
+        <item name="android:editTextBackground">
+            @drawable/rn_edit_text_material
+        </item>
     </style>
 
 </resources>
+
