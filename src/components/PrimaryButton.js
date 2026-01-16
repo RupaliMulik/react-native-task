@@ -1,12 +1,22 @@
-// src/components/PrimaryButton.js
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { COLORS } from '../theme/color';
+import LinearGradient from 'react-native-linear-gradient';
 
 const PrimaryButton = ({ label, onPress }) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress} activeOpacity={0.9}>
-      <Text style={styles.text}  allowFontScaling={false}>{label}</Text>
+    <TouchableOpacity
+      activeOpacity={0.9}
+      onPress={onPress}
+      style={styles.wrapper}
+    >
+      <LinearGradient
+        colors={['#B6FF5C', '#8DFF5A']}
+        start={{ x: 0, y: 0.5 }}
+        end={{ x: 1, y: 0.5 }}
+        style={styles.button}
+      >
+        <Text style={styles.text}>{label}</Text>
+      </LinearGradient>
     </TouchableOpacity>
   );
 };
@@ -14,25 +24,25 @@ const PrimaryButton = ({ label, onPress }) => {
 export default PrimaryButton;
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: COLORS.buttonGreen, // light green
-    paddingVertical: 14,
-    borderRadius: 28,
+  wrapper: {
     marginTop: 18,
-    alignItems: 'center',
+    marginHorizontal: 8, // ✅ spacing from card edges
+  },
 
+  button: {
+    height: 52, // ✅ slimmer like reference
+    borderRadius: 26, // perfect pill
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    // kill ALL glow/shadow
     elevation: 0,
     shadowColor: 'transparent',
+  },
 
-    
-  },
   text: {
-    fontWeight: '500',
     fontSize: 16,
-   // color: '#000000', // BLACK text (now visible)
-   color:'#000',
-    opacity: 1, 
-   
+    fontWeight: '700',
+    color: '#000', // black text
   },
-  
 });

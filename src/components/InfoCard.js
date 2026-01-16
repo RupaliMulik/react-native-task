@@ -25,14 +25,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
 
-    backgroundColor: '#121212',
+    // backgroundColor: '#212020ff',
+    backgroundColor: 'rgb(19, 18, 18)',
     // borderWidth:1,
-    borderColor:'rgba(63, 61, 61, 0.15)',
+    borderColor: '#1F232B',
     paddingVertical: 5,
     paddingHorizontal: 16,
     borderRadius: 30, // more rounded
     marginTop:35,
     marginBottom:8,
+    
   },
   text: {
     flex: 1,
